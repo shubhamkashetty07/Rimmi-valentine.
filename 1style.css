@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at top, #0b1020, #020617);
+  color: #f1f5f9;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+  padding: 100px 25px;
+}
+
+h1 {
+  font-size: 44px;
+  margin-bottom: 40px;
+  font-weight: 300;
+  animation: glow 3s infinite alternate;
+}
+
+p {
+  font-size: 19px;
+  line-height: 2;
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s forwards;
+}
+
+.delay1 { animation-delay: 1s; }
+.delay2 { animation-delay: 2.5s; }
+.delay3 { animation-delay: 4s; }
+.delay4 { animation-delay: 5.5s; }
+
+a.next {
+  display: inline-block;
+  margin-top: 50px;
+  color: #f9a8d4;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+a.next::after {
+  content: " →";
+  animation: arrow 1.4s infinite;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 8px #f9a8d4; }
+  to { text-shadow: 0 0 22px #f472b6; }
+}
+
+@keyframes arrow {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+/* floating lights */
+.light {
+  position: fixed;
+  bottom: -10px;
+  font-size: 16px;
+  color: rgba(255,255,255,0.4);
+  animation: rise linear forwards;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
